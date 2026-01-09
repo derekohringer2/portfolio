@@ -4,32 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Derek Ohringer — Journalism Experience</title>
-  <meta name="description" content="Derek Ohringer — Baseball Operations Professional. Journalism experience and work." />
+  <meta name="description" content="Derek Ohringer — Baseball Operations Professional. Journalism experience and published work." />
+
   <style>
     :root{
       --bg:#0b0d12;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.04);
+      --panel:rgba(255,255,255,.07);
+      --panel2:rgba(255,255,255,.045);
       --text:#f3f5f8;
-      --muted:rgba(243,245,248,.72);
+      --muted:rgba(243,245,248,.74);
       --line:rgba(255,255,255,.12);
       --accent:#8ab4ff;
+      --accent2:#b08bff;
       --shadow:0 18px 55px rgba(0,0,0,.45);
       --radius:18px;
-      --max:1040px;
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(1100px 650px at 18% 10%, rgba(138,180,255,.22), transparent 55%),
-        radial-gradient(900px 600px at 85% 25%, rgba(170,120,255,.14), transparent 55%),
+        radial-gradient(1200px 650px at 18% 12%, rgba(138,180,255,.24), transparent 55%),
+        radial-gradient(900px 600px at 85% 25%, rgba(176,139,255,.16), transparent 55%),
         var(--bg);
       line-height:1.55;
+    }
+
+    /* Accessibility */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:12px;
+      background:#fff;
+      color:#000;
+      padding:10px 12px;
+      border-radius:12px;
+      z-index:9999;
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+    }
+    .skip-link:focus{left:12px}
+    :focus-visible{
+      outline: 3px solid rgba(138,180,255,.95);
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important; transition:none !important; animation:none !important}
     }
 
     a{color:inherit}
@@ -45,6 +68,7 @@
     .nav{
       display:flex; align-items:center; justify-content:space-between;
       gap:14px;
+      flex-wrap:wrap;
     }
 
     .brand{
@@ -54,16 +78,41 @@
     }
 
     .mark{
-      width:40px; height:40px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(138,180,255,.95), rgba(170,120,255,.65));
+      width:42px; height:42px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(138,180,255,.95), rgba(176,139,255,.75));
       box-shadow: var(--shadow);
       display:grid; place-items:center;
-      font-weight:800;
-      letter-spacing:.3px;
+      font-weight:900;
+      letter-spacing:.5px;
+      flex: 0 0 auto;
     }
 
-    .brand b{display:block; letter-spacing:-.2px}
-    .brand span{color:var(--muted); font-size:.92rem}
+    .brand .name{
+      font-weight:800;
+      letter-spacing:-.2px;
+      font-size:1.05rem;
+      margin:0;
+      line-height:1.05;
+    }
+    .brand .role{
+      color:var(--muted);
+      font-size:.94rem;
+      margin:2px 0 0;
+      line-height:1.2;
+    }
+
+    .school{
+      display:flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size:.92rem;
+      white-space:nowrap;
+    }
+
+    main{padding-bottom:30px}
 
     .hero{
       margin-top:18px;
@@ -72,7 +121,7 @@
       gap:14px;
       align-items:stretch;
     }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+    @media (max-width: 980px){ .hero{grid-template-columns:1fr} }
 
     .card{
       background: var(--panel);
@@ -87,16 +136,19 @@
       margin:0 0 10px;
       font-size: clamp(30px, 3.8vw, 46px);
       line-height:1.1;
-      letter-spacing:-.6px;
+      letter-spacing:-.7px;
     }
 
-    .title{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 1.02rem;
+    .lede{
+      margin:0;
+      color:var(--muted);
+      font-size:1.05rem;
     }
 
+    .pillrow{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
     .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:7px 10px;
@@ -107,35 +159,8 @@
       font-size: .92rem;
     }
 
-    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px;
-      border-radius: 999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      text-decoration:none;
-      font-weight:650;
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn.primary{
-      border-color: rgba(138,180,255,.55);
-      background: rgba(138,180,255,.16);
-    }
-    .btn:hover{filter:brightness(1.06)}
-    .btn:active{transform:translateY(1px)}
-
-    .subhead{
-      margin:0 0 10px;
-      font-size: 1.22rem;
-      letter-spacing:-.2px;
-    }
-    .muted{color:var(--muted)}
-
     .section{
-      margin: 18px 0 0;
+      margin-top: 18px;
     }
     .section h2{
       margin:0 0 12px;
@@ -143,10 +168,12 @@
       letter-spacing:-.2px;
     }
 
-    .timeline{
+    .grid{
       display:grid;
+      grid-template-columns: 1fr 1fr;
       gap:12px;
     }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
 
     .item{
       padding:16px;
@@ -157,25 +184,72 @@
 
     .item h3{
       margin:0 0 6px;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       letter-spacing:-.15px;
-      display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
     }
 
     .badge{
-      font-size:.8rem;
+      font-size:.78rem;
       padding:4px 8px;
       border-radius:999px;
       border:1px solid rgba(138,180,255,.35);
       background: rgba(138,180,255,.10);
-      color: rgba(243,245,248,.9);
-      font-weight:650;
+      color: rgba(243,245,248,.92);
+      font-weight:800;
     }
 
-    .item p{margin:0; color:var(--muted)}
-    .metrics{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:10px;
+    .muted{color:var(--muted)}
+    .metrics{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+
+    /* Very obvious link buttons */
+    .cta{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(138,180,255,.55);
+      background:
+        linear-gradient(135deg, rgba(138,180,255,.28), rgba(176,139,255,.18));
+      color: var(--text);
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      box-shadow: 0 14px 36px rgba(0,0,0,.35);
+      width: 100%;
+    }
+
+    .btn:hover{filter: brightness(1.06)}
+    .btn:active{transform: translateY(1px)}
+    .btn small{
+      display:block;
+      font-weight:700;
+      opacity:.9;
+      letter-spacing:0;
+    }
+    .btn .arrow{font-weight:900}
+
+    .btn.secondary{
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-weight:800;
+      box-shadow:none;
+    }
+
+    /* Compact list of links (optional) */
+    .linklist{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
     }
 
     footer{
@@ -183,74 +257,112 @@
       padding-top: 16px;
       border-top: 1px solid var(--line);
       color: var(--muted);
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
       font-size:.92rem;
     }
   </style>
 </head>
 
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#">
+    <a class="brand" href="#top" aria-label="Go to top">
       <div class="mark">DO</div>
       <div>
-        <b>Derek Ohringer</b>
-        <span>Baseball Operations Professional</span>
+        <div class="name">Derek Ohringer</div>
+        <div class="role">Baseball Operations Professional</div>
       </div>
     </a>
 
-    <div class="pill">Philip Merrill College of Journalism — University of Maryland</div>
+    <div class="school" aria-label="School affiliation">
+      Philip Merrill College of Journalism — University of Maryland
+    </div>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="hero">
+<main id="main" class="wrap">
+  <section class="hero" id="top">
     <div class="card">
       <h1>Derek Ohringer</h1>
-      <p class="muted" style="margin:0;">
-        Baseball Operations Professional with a journalism background focused on sports storytelling, research,
-        and content production.
+      <p class="lede">
+        Baseball operations professional with a journalism background in sports reporting, content strategy,
+        photography, and independent media production.
       </p>
 
-      <div class="title">
-        <span class="pill">⚾ Baseball Ops</span>
+      <div class="pillrow" aria-label="Areas of work">
+        <span class="pill">⚾ Baseball Operations</span>
         <span class="pill">✍️ Writing</span>
         <span class="pill">📷 Photography</span>
         <span class="pill">🎥 Video</span>
       </div>
 
-      <div class="btnrow">
-        <a class="btn primary" href="#experience">Journalism Experience ↓</a>
-        <a class="btn" href="#" title="Add your link">Resume</a>
-        <a class="btn" href="#" title="Add your link">Contact</a>
+      <div class="cta" style="margin-top:16px;">
+        <a class="btn" href="#experience">
+          <span>Explore journalism experience</span>
+          <span class="arrow">↓</span>
+        </a>
+        <a class="btn secondary" href="#links">
+          <span>Jump to links</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
     </div>
 
     <aside class="card">
       <div style="padding:22px;">
-        <div class="subhead">Sub heading</div>
         <h2 style="margin:0 0 10px;">Journalism experience</h2>
         <p class="muted" style="margin:0;">
-          A snapshot of my writing, reporting, social media, photography, and independent sports media work.
+          Selected reporting, writing, social media, photography, and independent baseball media work.
+          All links below open in a new tab.
         </p>
+
+        <div class="linklist" id="links" aria-label="Quick links">
+          <a class="btn" href="https://apnews.com/article/college-sports-betting-towson-university-73b42c9ed6d4013741122b52a9ca4810" target="_blank" rel="noopener">
+            <span>Read: “Gambling on Campus” (AP News)</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="btn" href="https://dbknews.com/author/ohringerd/" target="_blank" rel="noopener">
+            <span>Read: The Diamondback author page</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="btn" href="https://streetcarsuburbs.news/?s=Derek%20ohringer" target="_blank" rel="noopener">
+            <span>Read: CP Here &amp; Now / Hyattsville work</span>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="btn" href="https://www.youtube.com/@TBCreviews" target="_blank" rel="noopener">
+            <span>Watch: The Baseball Channel (YouTube)</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
       </div>
     </aside>
   </section>
 
-  <section class="section" id="experience">
-    <h2>Journalism experience</h2>
+  <section class="section" id="experience" aria-labelledby="exp-title">
+    <h2 id="exp-title">Journalism experience</h2>
 
-    <div class="timeline">
+    <div class="grid">
       <article class="item">
         <h3>
           <span class="badge">Capstone</span>
           Gambling on Campus
         </h3>
-        <p>
-          Contributing author as part of a larger project through The Shirley Povich Center for Sports Journalism
-          and Howard Center for Investigative Journalism called <b>“Gambling on Campus.”</b>
+        <p class="muted">
+          Contributing author on a project through The Shirley Povich Center for Sports Journalism and
+          the Howard Center for Investigative Journalism.
         </p>
+
+        <div class="cta">
+          <a class="btn" href="https://apnews.com/article/college-sports-betting-towson-university-73b42c9ed6d4013741122b52a9ca4810" target="_blank" rel="noopener">
+            <span>Open the AP News story</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
       </article>
 
       <article class="item">
@@ -258,35 +370,55 @@
           <span class="badge">Internship</span>
           College Park Here &amp; Now • Hyattsville Life &amp; Times
         </h3>
-        <p>
-          Ran social media for <b>College Park Here and Now</b> and <b>Hyattsville Life and Times</b>, with
-          additional photography duties.
+        <p class="muted">
+          Ran social media and contributed photography and coverage for local publications.
         </p>
+
+        <div class="cta">
+          <a class="btn" href="https://streetcarsuburbs.news/?s=Derek%20ohringer" target="_blank" rel="noopener">
+            <span>Open search results for my work</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
       </article>
 
       <article class="item">
         <h3>
-          <span class="badge">Writing Position</span>
+          <span class="badge">Writing</span>
           The Diamondback (DBK)
         </h3>
-        <p>
-          Writer for <b>The DBK</b>, Maryland's student newspaper.
+        <p class="muted">
+          Writing and reporting for Maryland’s student newspaper.
         </p>
+
+        <div class="cta">
+          <a class="btn" href="https://dbknews.com/author/ohringerd/" target="_blank" rel="noopener">
+            <span>Open my DBK author page</span>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
       </article>
 
       <article class="item">
         <h3>
-          <span class="badge">Independent Work</span>
+          <span class="badge">Independent</span>
           The Baseball Channel (YouTube)
         </h3>
-        <p>
-          Creator for <b>The Baseball Channel</b>, a YouTube channel with more than <b>15,000</b> subscribers,
-          <b>100+</b> videos, and <b>3,000,000+</b> views.
+        <p class="muted">
+          Independent baseball media: 100+ videos, 15,000+ subscribers, 3,000,000+ total views.
         </p>
-        <div class="metrics">
-          <span class="pill">👥 15,000+ subs</span>
+
+        <div class="metrics" aria-label="Channel stats">
           <span class="pill">🎬 100+ videos</span>
+          <span class="pill">👥 15,000+ subscribers</span>
           <span class="pill">👁️ 3,000,000+ views</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="https://www.youtube.com/@TBCreviews" target="_blank" rel="noopener">
+            <span>Open the YouTube channel</span>
+            <span class="arrow">↗</span>
+          </a>
         </div>
       </article>
     </div>
@@ -294,7 +426,7 @@
 
   <footer>
     <div>© <span id="y"></span> Derek Ohringer</div>
-    <div class="muted">Single-file site • Edit links for Resume/Contact</div>
+    <div>All external links open in a new tab.</div>
   </footer>
 </main>
 
