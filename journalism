@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Derek Ohringer — Journalism Experience</title>
+  <meta name="description" content="Derek Ohringer — Baseball Operations Professional. Journalism experience and work." />
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --panel:rgba(255,255,255,.06);
+      --panel2:rgba(255,255,255,.04);
+      --text:#f3f5f8;
+      --muted:rgba(243,245,248,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#8ab4ff;
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1040px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 650px at 18% 10%, rgba(138,180,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 85% 25%, rgba(170,120,255,.14), transparent 55%),
+        var(--bg);
+      line-height:1.55;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px}
+
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,13,18,.72);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+      padding:14px 0;
+    }
+
+    .mark{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(138,180,255,.95), rgba(170,120,255,.65));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+
+    .brand b{display:block; letter-spacing:-.2px}
+    .brand span{color:var(--muted); font-size:.92rem}
+
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .hero{grid-template-columns:1fr} }
+
+    .card{
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero .card{padding:22px}
+
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(30px, 3.8vw, 46px);
+      line-height:1.1;
+      letter-spacing:-.6px;
+    }
+
+    .title{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:650;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn.primary{
+      border-color: rgba(138,180,255,.55);
+      background: rgba(138,180,255,.16);
+    }
+    .btn:hover{filter:brightness(1.06)}
+    .btn:active{transform:translateY(1px)}
+
+    .subhead{
+      margin:0 0 10px;
+      font-size: 1.22rem;
+      letter-spacing:-.2px;
+    }
+    .muted{color:var(--muted)}
+
+    .section{
+      margin: 18px 0 0;
+    }
+    .section h2{
+      margin:0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing:-.2px;
+    }
+
+    .timeline{
+      display:grid;
+      gap:12px;
+    }
+
+    .item{
+      padding:16px;
+      background: var(--panel2);
+      border:1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .item h3{
+      margin:0 0 6px;
+      font-size: 1.05rem;
+      letter-spacing:-.15px;
+      display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+    }
+
+    .badge{
+      font-size:.8rem;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(138,180,255,.35);
+      background: rgba(138,180,255,.10);
+      color: rgba(243,245,248,.9);
+      font-weight:650;
+    }
+
+    .item p{margin:0; color:var(--muted)}
+    .metrics{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    footer{
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      font-size:.92rem;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <div class="mark">DO</div>
+      <div>
+        <b>Derek Ohringer</b>
+        <span>Baseball Operations Professional</span>
+      </div>
+    </a>
+
+    <div class="pill">Philip Merrill College of Journalism — University of Maryland</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <h1>Derek Ohringer</h1>
+      <p class="muted" style="margin:0;">
+        Baseball Operations Professional with a journalism background focused on sports storytelling, research,
+        and content production.
+      </p>
+
+      <div class="title">
+        <span class="pill">⚾ Baseball Ops</span>
+        <span class="pill">✍️ Writing</span>
+        <span class="pill">📷 Photography</span>
+        <span class="pill">🎥 Video</span>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" href="#experience">Journalism Experience ↓</a>
+        <a class="btn" href="#" title="Add your link">Resume</a>
+        <a class="btn" href="#" title="Add your link">Contact</a>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div style="padding:22px;">
+        <div class="subhead">Sub heading</div>
+        <h2 style="margin:0 0 10px;">Journalism experience</h2>
+        <p class="muted" style="margin:0;">
+          A snapshot of my writing, reporting, social media, photography, and independent sports media work.
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Journalism experience</h2>
+
+    <div class="timeline">
+      <article class="item">
+        <h3>
+          <span class="badge">Capstone</span>
+          Gambling on Campus
+        </h3>
+        <p>
+          Contributing author as part of a larger project through The Shirley Povich Center for Sports Journalism
+          and Howard Center for Investigative Journalism called <b>“Gambling on Campus.”</b>
+        </p>
+      </article>
+
+      <article class="item">
+        <h3>
+          <span class="badge">Internship</span>
+          College Park Here &amp; Now • Hyattsville Life &amp; Times
+        </h3>
+        <p>
+          Ran social media for <b>College Park Here and Now</b> and <b>Hyattsville Life and Times</b>, with
+          additional photography duties.
+        </p>
+      </article>
+
+      <article class="item">
+        <h3>
+          <span class="badge">Writing Position</span>
+          The Diamondback (DBK)
+        </h3>
+        <p>
+          Writer for <b>The DBK</b>, Maryland's student newspaper.
+        </p>
+      </article>
+
+      <article class="item">
+        <h3>
+          <span class="badge">Independent Work</span>
+          The Baseball Channel (YouTube)
+        </h3>
+        <p>
+          Creator for <b>The Baseball Channel</b>, a YouTube channel with more than <b>15,000</b> subscribers,
+          <b>100+</b> videos, and <b>3,000,000+</b> views.
+        </p>
+        <div class="metrics">
+          <span class="pill">👥 15,000+ subs</span>
+          <span class="pill">🎬 100+ videos</span>
+          <span class="pill">👁️ 3,000,000+ views</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div>© <span id="y"></span> Derek Ohringer</div>
+    <div class="muted">Single-file site • Edit links for Resume/Contact</div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
